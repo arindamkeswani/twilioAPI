@@ -3,7 +3,7 @@ const authRouter = express.Router();
 // const generatedOTP = require('./generateOTP')
 const sendOTPsms = require('./sendOTP').sendOTP
 // const userModel = require('../models/userModels');
-
+//ywgdyqws
 
 module.exports.login =function loginUser(req, res) {
     // try {
