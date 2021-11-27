@@ -6,22 +6,16 @@ const sendOTPsms = require('./sendOTP').sendOTP
 // const userModel = require('../models/userModels');
 //ywgdyqws
 
-module.exports.login = async function loginUser(req, res) {
+module.exports.login = function loginUser(req, res) {
 
     //MANUAL 
     const otp = req.body.otp
     console.log(req.body.otp, generatedOTP);
     if (otp == generatedOTP) {
-        // res.send("true");
-        // console.log('hi loginscript');
-        return await res.redirect('/homePage');
-            // //console.log(req, res);
-            // return res.sendFile('Practice\\SMS\\minimalist-login\\src\\view\\home.html', 
-            // {root:"E:\\Snippets\\Backend\\Twilio"});
-        
+        console.log("Successful");
     }
     else {
-        console.log("Wrong");
+        console.log("Not successfull");
     }
     //VERIFY API
     // try {

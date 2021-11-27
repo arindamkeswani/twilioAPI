@@ -1,0 +1,4 @@
+<Response>
+<Say voice="alice">Your OTP is: 1 2 3 4</Say>
+<Play>http://demo.twilio.com/docs/classic.mp3</Play>
+</Response>
