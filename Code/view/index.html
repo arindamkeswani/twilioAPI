@@ -13,7 +13,7 @@
 
     <div class="grid">
 
-        <form action="https://httpbin.org/post" method="POST" class="form login">
+        <form action="./index.html" method="GET" class="form login">
 
             <div class="form__field">
                 <label for="login__username"><svg class="icon">
@@ -46,8 +46,8 @@
             </div>
 
             <div class="form__field submit">
-                <button id="submit" class="button">Login</button>
-                <!-- <input type="submit" value="Sign In"> -->
+                <!-- <button id="submit" class="button">Login</button> -->
+                <input type="submit" id="submit" value="Sign In">
             </div>
 
         </form>
@@ -78,7 +78,30 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 
+    let otpSmsBtn = document.querySelector("#otpSmsBtn");
+    otpSmsBtn.addEventListener("click", async (e)=>{
+        e.preventDefault()
+        let phone = document.querySelector(".phone").value
+        let channel = 'sms'
+        // console.log(phone);
+        let resp = await axios.post('/user/verify/otp', {phone, channel});
+    })
+
+    let otpCallBtn = document.querySelector("#otpCallBtn")
+    otpCallBtn.addEventListener("click",async (e)=>{
+        e.preventDefault()
+        let phone = document.querySelector(".phone").value;
+        let channel = 'call'
+        let resp = await axios.post('/user/verify/otp', {phone, channel});
+    })
     
+    let submitBtn = document.querySelector("#submit");
+    submitBtn.addEventListener("click", async (e)=>{
+        e.preventDefault()
+        let otp = document.querySelector("#login__password").value
+        let phone = document.querySelector(".phone").value;
+        let resp = await axios.post('/user/login', {phone, otp});
+    })
 
 </script>
 

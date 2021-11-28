@@ -13,6 +13,12 @@ app.listen(port, function(){
     console.log(`server listening on port ${port}`);
 })
 
+app.get('/', (req,res)=>{
+    res.sendFile("E:\\Snippets\\Backend\\Twilio\\Code\\view\\index.html")
+})
+
+const userRouter = require("./Routers/userRouter")
+app.use('/user', userRouter)
 
 
 
