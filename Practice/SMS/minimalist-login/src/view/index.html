@@ -79,12 +79,12 @@
 <script>
 
     let otpSmsBtn = document.querySelector('.otpSmsBtn');
-    // otpSmsBtn.addEventListener('click', async function (e) {
-    //     e.preventDefault();
-    //     let phone = document.querySelector(".phone").value;
-    //     // let channel = "sms"
-    //     let resp = await axios.post('/user/verify/sms', { phone });
-    // })
+    otpSmsBtn.addEventListener('click', async function (e) {
+        e.preventDefault();
+        let phone = document.querySelector(".phone").value;
+        // let channel = "sms"
+        let resp = await axios.post('/user/verify/sms', { phone });
+    })
 
 
     let otpCallBtn = document.querySelector('.otpCallBtn');

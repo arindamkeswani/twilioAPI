@@ -11,7 +11,7 @@ module.exports.login = function loginUser(req, res) {
     //MANUAL 
     const otp = req.body.otp
     console.log(req.body.otp, generatedOTP);
-    if (otp == generatedOTP) {
+    if (otp == generatedOTP.toString()) {
         console.log("Successful");
     }
     else {
